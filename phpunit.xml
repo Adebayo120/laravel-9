@@ -12,7 +12,7 @@
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
-    <coverage processUncoveredFiles="true">
+    <coverage>
         <include>
             <directory suffix=".php">./app</directory>
         </include>
@@ -20,8 +20,13 @@
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="APP_KEY" value="base64:HyJ8edodYCI+cLCuDRZqHKDkLpoWb1N+jpzPYcSyQ8A="/>
+        <env name="ELASTICSEARCH_BULK_INDEX_BATCH_LIMIT" value="1"/>
+        <env name="ELASTICSEARCH_DEFAULT_INDEX" value="test"/>
+        <env name="REDIS_STORAGE_KEY" value="test"/>
         <env name="CACHE_DRIVER" value="array"/>
-        <env name="DB_DATABASE" value="testing"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>        
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>

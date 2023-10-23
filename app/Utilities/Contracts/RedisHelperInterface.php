@@ -2,16 +2,19 @@
 
 namespace App\Utilities\Contracts;
 
-use Illuminate\Database\Eloquent\Model;
-
 interface RedisHelperInterface {
     /**
-     * Store the id of a message along with a message subject in Redis.
+     * Store the messages in Redis.
      *
-     * @param  mixed  $id
-     * @param  string  $messageSubject
-     * @param  string  $toEmailAddress
+     * @param  array  $messages
      * @return void
      */
-    public function storeRecentMessage(mixed $id, string $messageSubject, string $toEmailAddress): void;
+    public function storeRecentMessages(array $newMessages): void;
+
+    /**
+     * fetch the messages in Redis.
+     *
+     * @return  array  $messages
+     */
+    public function getMessages(): array;
 }

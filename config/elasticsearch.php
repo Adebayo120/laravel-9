@@ -208,7 +208,10 @@ return [
             'tracer' => null,
 
         ],
-
     ],
+
+    'default_index' => env('ELASTICSEARCH_DEFAULT_INDEX', 'emails'),
+
+    'bulk_index_batch_limit' => env('ELASTICSEARCH_BULK_INDEX_BATCH_LIMIT', 10),
 
 ];
